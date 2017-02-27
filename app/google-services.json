@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "161303242691",
+    "firebase_url": "https://codepolitan-firebase-login.firebaseio.com",
+    "project_id": "codepolitan-firebase-login",
+    "storage_bucket": "codepolitan-firebase-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161303242691:android:79f453623d2f2163",
+        "android_client_info": {
+          "package_name": "com.codepolitan.examplefirebaselogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161303242691-okvsp8cqu2k7gjav5gu2gbaul1m68gpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBomFpSpl7q23GRfGePv0ezKq3Lf1u-Uh4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
