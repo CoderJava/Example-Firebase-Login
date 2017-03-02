@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <path
+        android:pathData="M 0 0 H 100 V 100 H 0 V 0 Z" />
+    <path
+        android:strokeWidth="1"
+        android:pathData="M0.5 0 L 383.5 0 L 479.5 0 L 503.5 0 L 509.5 0 L 512 1.5 L 512 7.5 L 512 31.5 L
+512 127.5 L 511.5 512 L 128.5 512 L 32.5 512 L 8.5 512 L 2.5 512 L 0 510.5 L 0
+504.5 L 0 480.5 L 0 384.5 L 0 0.5 L 0.5 0 Z" />
+    <path
+        android:fillColor="#fe9f00"
+        android:strokeColor="#fe9f00"
+        android:strokeWidth="1"
+        android:pathData="M173.5 74 Q 178.55 73.44999999999999 180 76.5 L 185 84.5 L 193.5 102 L 218 151.5
+L 224 163.5 Q 224.09523809523807 169.57142857142858 228 168.5 L 240 141.5 L 244
+131.5 L 247.5 128 Q 250.00833333333338 124.5916666666667 256 126.5 L 262 134.5 L
+269 147.5 L 286 181.5 L 291 191.5 L 292.5 198 L 257 232.5 L 235 187.5 L 229.5
+176 Q 229.21666666666667 171.45 226 172.5 L 154 311.5 L 134 349.5 L 128 359.5 Q
+127.17857142857143 365.05357142857144 124 365.5 L 133 312.5 L 157 162.5 L 165
+112.5 L 169 88.5 Q 169 79.5 173 74.5 L 173.5 74 Z" />
+    <path
+        android:fillColor="#feca27"
+        android:strokeColor="#feca27"
+        android:strokeWidth="1"
+        android:pathData="M340.5 150 Q 350.00396825396825 148.49603174603175 351 155.5 L 354 166.5 L 355.5
+177 L 361.5 212 L 387.5 365 L 300.5 417 L 276 431.5 Q 271.04444444444437
+436.04444444444437 262.5 437 L 251 437.5 Q 239.89860139860141 436.6013986013986
+234 430.5 L 212 417.5 L 148.5 380 L 132 370.5 L 127 367.5 Q 123.95833333333334
+367.29166666666663 125.5 365 L 340 150.5 L 340.5 150 Z" />
+    <path
+        android:fillColor="#f57f16"
+        android:strokeColor="#f57f16"
+        android:strokeWidth="1"
+        android:pathData="M226.5 172 L 235 186.5 L 252.5 223 L 256 229.5 L 256.5 234 L 126 363.5 L 226
+172.5 L 226.5 172 Z" />
+</vector>

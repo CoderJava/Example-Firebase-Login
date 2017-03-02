@@ -13,7 +13,7 @@
                     android:radius="5dp"
                     />
                 <solid
-                    android:color="@color/colorButtonPressed"
+                    android:color="#e0e0e0"
                     />
             </shape>
         </item>
