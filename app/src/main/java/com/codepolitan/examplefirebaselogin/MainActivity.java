@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.edit_text_password_activity_main)
     EditText editTextPassword;
 
-    /*private SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", 0);*/
+    private SharedPreferences sharedPreferences;
     private FirebaseAuth firebaseAuth;
     private boolean loggedIn;
     
@@ -43,13 +44,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        firebaseAuth = FirebaseAuth.getInstance();
+        initSharedPreferences();
+        initFirebase();
         ButterKnife.bind(this);
         loggedIn = isLoggedIn();
         if (loggedIn) {
             //  go to dashboard
             goToDashboard();
+        } else {
+            editTextUsername.setText(sharedPreferences.getString("username", ""));
         }
+    }
+
+    private void initFirebase() {
+        firebaseAuth = FirebaseAuth.getInstance();
+    }
+
+    private void initSharedPreferences() {
+        sharedPreferences = getSharedPreferences("LoginPrefs", 0);
     }
 
     private void goToDashboard() {
@@ -73,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void login(String username, String password) {
+    private void login(final String username, final String password) {
         if (TextUtils.isEmpty(username)) {
             Snackbar.make(findViewById(android.R.id.content), R.string.error_message_username_empty, Snackbar.LENGTH_LONG)
                     .show();
@@ -91,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 //  login sucess
                                 //  go to dashboard
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("username", username);
+                                editor.putString("password", password);
+                                editor.commit();
                                 goToDashboard();
                             } else {
                                 //  login failed
@@ -98,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     });
+
         }
     }
 
@@ -128,17 +145,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean isLoggedIn() {
-        /*if (sharedPreferences.getBoolean("loggedIn", false) != false) {
-            //  user is logged in
-            if()
-            return true;
-        } else {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("loggedIn", false);
-            editor.commit();
-            return false;
-        }*/
-
         if (firebaseAuth.getCurrentUser() != null) {
             //  user logged in
             return true;

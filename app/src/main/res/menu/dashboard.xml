@@ -2,8 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_sort_by_title_note"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="Sort by Title"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_sort_by_date_time_note"
+        android:orderInCategory="100"
+        android:title="Sort by Date"
+        app:showAsAction="never"
+        />
 </menu>
