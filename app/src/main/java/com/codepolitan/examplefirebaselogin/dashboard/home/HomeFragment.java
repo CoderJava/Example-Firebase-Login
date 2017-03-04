@@ -1,10 +1,9 @@
-package com.codepolitan.examplefirebaselogin;
+package com.codepolitan.examplefirebaselogin.dashboard.home;
 
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -22,6 +21,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import com.codepolitan.examplefirebaselogin.dashboard.data.edit.EditDataDialogFragment;
+import com.codepolitan.examplefirebaselogin.dashboard.data.add.NewDataFragment;
+import com.codepolitan.examplefirebaselogin.R;
 import com.codepolitan.examplefirebaselogin.adapter.AdapterData;
 import com.codepolitan.examplefirebaselogin.model.Data;
 import com.google.android.gms.tasks.OnCompleteListener;

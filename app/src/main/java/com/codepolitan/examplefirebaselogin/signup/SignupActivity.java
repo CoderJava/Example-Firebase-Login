@@ -1,4 +1,4 @@
-package com.codepolitan.examplefirebaselogin;
+package com.codepolitan.examplefirebaselogin.signup;
 
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.codepolitan.examplefirebaselogin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 

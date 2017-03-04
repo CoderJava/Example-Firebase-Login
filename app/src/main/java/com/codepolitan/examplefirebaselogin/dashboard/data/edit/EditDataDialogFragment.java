@@ -1,16 +1,16 @@
-package com.codepolitan.examplefirebaselogin;
+package com.codepolitan.examplefirebaselogin.dashboard.data.edit;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.codepolitan.examplefirebaselogin.R;
 import com.codepolitan.examplefirebaselogin.model.Data;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -47,7 +47,7 @@ public class EditDataDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.layout_dialog_edit, container, false);
+        view = inflater.inflate(R.layout.dialog_fragment_edit_data, container, false);
         getDialog().setTitle("Edit Data");
         ButterKnife.bind(this, view);
         EventBus.getDefault().register(this);

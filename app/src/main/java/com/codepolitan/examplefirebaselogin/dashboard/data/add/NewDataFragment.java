@@ -1,4 +1,4 @@
-package com.codepolitan.examplefirebaselogin;
+package com.codepolitan.examplefirebaselogin.dashboard.data.add;
 
 
 import java.text.SimpleDateFormat;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.codepolitan.examplefirebaselogin.R;
 import com.codepolitan.examplefirebaselogin.model.Data;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;

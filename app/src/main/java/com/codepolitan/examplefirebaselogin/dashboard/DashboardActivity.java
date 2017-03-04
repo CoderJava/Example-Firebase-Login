@@ -1,9 +1,7 @@
-package com.codepolitan.examplefirebaselogin;
+package com.codepolitan.examplefirebaselogin.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,9 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
-import butterknife.BindView;
+import com.codepolitan.examplefirebaselogin.dashboard.account.change.password.ChangePasswordDialogFragment;
+import com.codepolitan.examplefirebaselogin.dashboard.account.change.username.ChangeUsernameDialogFragment;
+import com.codepolitan.examplefirebaselogin.dashboard.home.HomeFragment;
+import com.codepolitan.examplefirebaselogin.R;
+import com.codepolitan.examplefirebaselogin.main.MainActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -52,7 +54,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dashboard, menu);
+        /*getMenuInflater().inflate(R.menu.dashboard, menu);*/
         return true;
     }
 
@@ -74,11 +76,20 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_reset_password:
-                //  do something
+            case R.id.nav_change_password:
+                ChangePasswordDialogFragment changePasswordDialogFragment = new ChangePasswordDialogFragment();
+                changePasswordDialogFragment.show(getSupportFragmentManager(), null);
+                break;
+            case R.id.nav_change_email:
+                ChangeUsernameDialogFragment changeUsernameDialogFragment = new ChangeUsernameDialogFragment();
+                changeUsernameDialogFragment.show(getSupportFragmentManager(), null);
                 break;
             case R.id.nav_logout:
-                //  do something
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.signOut();
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 break;
         }
 
