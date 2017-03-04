@@ -5,4 +5,6 @@
     <color name="colorAccent">#CDDC39</color>
     <color name="colorButton">#CDDC39</color>
     <color name="colorButtonPressed">#DCE775</color>
+    <color name="colorEdit">#388e3c</color>
+    <color name="colorDelete">#d32f2f</color>
 </resources>

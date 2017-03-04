@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.edit_text_password_activity_main)
     EditText editTextPassword;
 
-    private SharedPreferences sharedPreferences;
     private FirebaseAuth firebaseAuth;
     private boolean loggedIn;
     
@@ -44,24 +43,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initSharedPreferences();
         initFirebase();
         ButterKnife.bind(this);
         loggedIn = isLoggedIn();
         if (loggedIn) {
             //  go to dashboard
             goToDashboard();
-        } else {
-            editTextUsername.setText(sharedPreferences.getString("username", ""));
         }
     }
 
     private void initFirebase() {
         firebaseAuth = FirebaseAuth.getInstance();
-    }
-
-    private void initSharedPreferences() {
-        sharedPreferences = getSharedPreferences("LoginPrefs", 0);
     }
 
     private void goToDashboard() {
@@ -103,10 +95,6 @@ public class MainActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 //  login sucess
                                 //  go to dashboard
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString("username", username);
-                                editor.putString("password", password);
-                                editor.commit();
                                 goToDashboard();
                             } else {
                                 //  login failed

@@ -32,7 +32,7 @@
         android:id="@+id/fab_new_data_fragment_home"
         android:layout_margin="@dimen/fab_margin"
         android:layout_gravity="bottom|end"
-        app:srcCompat="@drawable/ic_edit_white"
+        app:srcCompat="@drawable/ic_note_add_white"
         tools:ignore="VectorDrawableCompat" />
 
 </android.support.design.widget.CoordinatorLayout>

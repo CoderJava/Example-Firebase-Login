@@ -12,6 +12,7 @@ import com.codepolitan.examplefirebaselogin.R;
 import com.codepolitan.examplefirebaselogin.model.Data;
 
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,6 +46,20 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder> {
     @Override
     public int getItemCount() {
         return listData.size();
+    }
+
+    public void refreshItem(Map<String, String> mapDataChanged, int position) {
+        listData.get(position).setContent(mapDataChanged.get("content"));
+        listData.get(position).setDatetime(mapDataChanged.get("datetime"));
+        listData.get(position).setTitle(mapDataChanged.get("title"));
+        listData.get(position).setUsername(mapDataChanged.get("username"));
+        notifyItemChanged(position);
+    }
+
+    public void removeItem(int position) {
+        listData.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, listData.size());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
